@@ -40,5 +40,10 @@ const styles = StyleSheet.create({
   },
   txtJogador: {
     fontSize: 18
+  },
+  hands: {
+    marginTop: 10,
+    width: 100,
+    height: 80
   }
 });

@@ -6,7 +6,8 @@ import {
   View,
   Button,
   Alert,
-  Image
+  Image,
+  ScrollView
 } from 'react-native';
 
 import Topo from './src/components/topo';
@@ -39,7 +40,7 @@ class myApp extends Component{
 
     var resultado = '';
 
-    "pedra"==pcChoose&&("pedra"==escolhaUsuario&&(resultado="Empate",Alert.alert(resultado)),"papel"==escolhaUsuario&&(resultado="Você venceu",Alert.alert(resultado)),"tesoura"==escolhaUsuario&&(resultado="Você perdeu",Alert.alert(resultado))),"papel"==pcChoose&&("papel"==escolhaUsuario&&(resultado="Empate",Alert.alert(resultado)),"tesoura"==escolhaUsuario&&(resultado="Você ganhou",Alert.alert(resultado)),"pedra"==escolhaUsuario&&(resultado="Você perdeu",Alert.alert(resultado))),"tesoura"==pcChoose&&("tesoura"==escolhaUsuario&&(resultado="Empate",Alert.alert(resultado)),"pedra"==escolhaUsuario&&(resultado="Você ganhou",Alert.alert(resultado)),"papel"==escolhaUsuario&&(resultado="Você perdeu",Alert.alert(resultado)));
+    "pedra"==pcChoose&&("pedra"==escolhaUsuario&&(resultado="Empate"),"papel"==escolhaUsuario&&(resultado="Você venceu"),"tesoura"==escolhaUsuario&&(resultado="Você perdeu")),"papel"==pcChoose&&("papel"==escolhaUsuario&&(resultado="Empate"),"tesoura"==escolhaUsuario&&(resultado="Você ganhou"),"pedra"==escolhaUsuario&&(resultado="Você perdeu")),"tesoura"==pcChoose&&("tesoura"==escolhaUsuario&&(resultado="Empate"),"pedra"==escolhaUsuario&&(resultado="Você ganhou"),"papel"==escolhaUsuario&&(resultado="Você perdeu"));
 
     this.setState({ escolhaUsuario : escolhaUsuario,
                     escolhaComputador : pcChoose,
@@ -65,13 +66,15 @@ class myApp extends Component{
           </View>
         </View>
 
-        <View style={styles.palco}>
-          <Text style={styles.txtResultado}>{this.state.resultado}</Text>
+        <ScrollView>
+          <View style={styles.palco}>
+            <Text style={styles.txtResultado}>{this.state.resultado}</Text>
 
-          <Icone escolha={this.state.escolhaComputador} jogador={'Computador'}></Icone>
-          <Icone escolha={this.state.escolhaUsuario} jogador={'Você'}></Icone>
+            <Icone escolha={this.state.escolhaComputador} jogador={'Computador'}></Icone>
+            <Icone escolha={this.state.escolhaUsuario} jogador={'Você'}></Icone>
 
-        </View>
+          </View>
+        </ScrollView>
 
       </View>
     );
@@ -103,11 +106,6 @@ const styles = StyleSheet.create({
   palco: {
     marginTop: 10,
     alignItems: 'center'
-  },
-  hands: {
-    marginTop: 10,
-    width: 100,
-    height: 80
   }
 
 });
