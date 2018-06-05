@@ -9,9 +9,12 @@ import {
   Image
 } from 'react-native';
 
+import Topo from './src/components/topo';
+import Icone from './src/components/icone';
+
 // Action
 
-class app3 extends Component{
+class myApp extends Component{
 
   constructor(props) {
     super(props);
@@ -75,42 +78,7 @@ class app3 extends Component{
   }
 }
 
-class Topo extends Component {
-  render(){
-    return(
-      <Image style={styles.logo} source={require('./img/mozart.jpg')}/>
-    );
-  }
-}
-
-class Icone extends Component{
-  render(){
-    if(this.props.escolha == 'pedra'){
-      return(
-        <View style={styles.icone}>
-          <Text style={styles.txtJogador}>{this.props.jogador}</Text>
-          <Image style={styles.hands} source={require('./img/pedra.png')} />
-        </View>
-      );
-    } else if(this.props.escolha == 'papel'){
-      return(
-        <View style={styles.icone}>
-          <Text style={styles.txtJogador}>{this.props.jogador}</Text>
-          <Image style={styles.hands} source={require('./img/papel.png')} />
-        </View>
-      );
-    } else if(this.props.escolha == 'tesoura'){
-      return(
-        <View style={styles.icone}>
-          <Text style={styles.txtJogador}>{this.props.jogador}</Text>
-          <Image style={styles.hands} source={require('./img/tesoura.png')} />
-        </View>
-      );
-    } else {
-      return false;
-    }
-  }
-}
+// Styles
 
 const styles = StyleSheet.create({
   btnEscolha: {
@@ -121,11 +89,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 10
-  },
-  logo: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
   },
   alignItems: {
     marginTop: 40,
@@ -145,16 +108,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: 100,
     height: 80
-  },
-  icone: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 10
-  },
-  txtJogador: {
-    fontSize: 18
   }
 
-
 });
-AppRegistry.registerComponent('jokenpo', () => app3);
+
+// Run App
+AppRegistry.registerComponent('jokenpo', () => myApp);
