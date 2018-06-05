@@ -36,56 +36,7 @@ class app3 extends Component{
 
     var resultado = '';
 
-    if(pcChoose == 'pedra'){
-      if(escolhaUsuario == 'pedra'){
-        resultado = 'Empate';
-        Alert.alert(resultado);
-      }
-
-      if(escolhaUsuario == 'papel'){
-        resultado = 'Você venceu';
-        Alert.alert(resultado);
-      }
-
-      if(escolhaUsuario == 'tesoura'){
-        resultado = 'Você perdeu';
-        Alert.alert(resultado);
-      }
-    }
-
-    if(pcChoose == 'papel'){
-      if(escolhaUsuario == 'papel'){
-        resultado = 'Empate';
-        Alert.alert(resultado);
-      }
-
-      if(escolhaUsuario == 'tesoura'){
-        resultado = 'Você ganhou';
-        Alert.alert(resultado);
-      }
-
-      if(escolhaUsuario == 'pedra'){
-        resultado = 'Você perdeu';
-        Alert.alert(resultado);
-      }
-    }
-
-    if(pcChoose == 'tesoura'){
-      if(escolhaUsuario == 'tesoura'){
-        resultado = 'Empate';
-        Alert.alert(resultado);
-      }
-
-      if(escolhaUsuario == 'pedra'){
-        resultado = 'Você ganhou';
-        Alert.alert(resultado);
-      }
-
-      if(escolhaUsuario == 'papel'){
-        resultado = 'Você perdeu';
-        Alert.alert(resultado);
-      }
-    }
+    "pedra"==pcChoose&&("pedra"==escolhaUsuario&&(resultado="Empate",Alert.alert(resultado)),"papel"==escolhaUsuario&&(resultado="Você venceu",Alert.alert(resultado)),"tesoura"==escolhaUsuario&&(resultado="Você perdeu",Alert.alert(resultado))),"papel"==pcChoose&&("papel"==escolhaUsuario&&(resultado="Empate",Alert.alert(resultado)),"tesoura"==escolhaUsuario&&(resultado="Você ganhou",Alert.alert(resultado)),"pedra"==escolhaUsuario&&(resultado="Você perdeu",Alert.alert(resultado))),"tesoura"==pcChoose&&("tesoura"==escolhaUsuario&&(resultado="Empate",Alert.alert(resultado)),"pedra"==escolhaUsuario&&(resultado="Você ganhou",Alert.alert(resultado)),"papel"==escolhaUsuario&&(resultado="Você perdeu",Alert.alert(resultado)));
 
     this.setState({ escolhaUsuario : escolhaUsuario,
                     escolhaComputador : pcChoose,
